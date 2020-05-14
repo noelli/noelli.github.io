@@ -9192,10 +9192,11 @@ t=1
 break}else throw H.c(P.hh("Failed to load txt"))
 case 1:return P.a3(r,s)}})
 return P.a4($async$Hc,s)},
-vA:function(a){var t=0,s=P.a5(u.H),r
-var $async$vA=P.a_(function(b,c){if(b===1)return P.a2(c,s)
+vA:function(a,b){var t=0,s=P.a5(u.H),r
+var $async$vA=P.a_(function(c,d){if(c===1)return P.a2(d,s)
 while(true)switch(t){case 0:r=u.s
-self._paq.push(H.a(["setDocumentTitle",a],r))
+self._paq.push(H.a(["setDocumentTitle","noell.li - "+b],r))
+self._paq.push(H.a(["setCustomUrl","noell.li/#"+a],r))
 self._paq.push(H.a(["trackPageView"],r))
 return P.a3(null,s)}})
 return P.a4($async$vA,s)},
@@ -44882,7 +44883,7 @@ F.qx.prototype={
 az:function(){return new F.EF(C.n)}}
 F.EF.prototype={
 aT:function(){this.bd()
-R.vA("noell.li - Home")},
+R.vA("/","Home")},
 L:function(a){var t=null,s=L.cJ("noell.li",t,t),r=u.p
 return M.PL(new O.kk(a,s,"/",new P.V(1/0,56),t),B.a17(H.a([M.cp(t,new O.yg(t),t,t,t,t,t,t,t),T.kF(H.a([M.cp(t,t,t,t,t,30,t,t,t)],r),C.av,C.aJ,C.az),T.kF(H.a([T.xx(Z.Jp(C.bR.i(0,900),t,30,8,2)),M.cp(C.rA,L.cJ("Featured Projects:",K.ay(a).X.f,t),t,t,t,t,t,new V.aC(10,10,10,10),t),T.xx(Z.Jp(C.bR.i(0,900),8,30,t,2))],r),C.av,C.aJ,C.az),new T.eM(C.V,t,t,new O.r_(t),t)],r),t,t,t,!1),new O.iM(t,t))}}
 D.q4.prototype={
@@ -44908,12 +44909,12 @@ while(true)switch(t){case 0:t=2
 return P.ac(K.yZ(a).lv("/",null,u.K),$async$mI)
 case 2:return P.a3(null,s)}})
 return P.a4($async$mI,s)},
-L:function(a){var t,s=null,r=T.Np(a,u.K).b.b
-if(r==null)this.mI(a)
-t=r.d
-R.vA(C.c.U("noell.li - viewProject: ",t))
+L:function(a){var t,s=null,r="/viewProject",q=T.Np(a,u.K).b.b
+if(q==null)this.mI(a)
+t=q.d
+R.vA(r,C.c.U("Project: ",t))
 t=L.cJ(t,s,s)
-return M.PL(new O.kk(a,t,"/viewProject",new P.V(1/0,56),s),new T.eM(C.V,s,s,L.cJ(r.b,s,s),s),new O.iM(s,s))}}
+return M.PL(new O.kk(a,t,r,new P.V(1/0,56),s),new T.eM(C.V,s,s,L.cJ(q.b,s,s),s),new O.iM(s,s))}}
 F.pN.prototype={
 az:function(){return new F.E5(C.n)}}
 F.E5.prototype={
@@ -44927,7 +44928,7 @@ return P.a3(null,s)}})
 return P.a4($async$fb,s)},
 aT:function(){this.bd()
 this.fb()
-R.vA("noell.li - Impressum")},
+R.vA("/impressum","Impressum")},
 L:function(a){var t=null,s="/impressum",r=F.c9(a,!1).a,q=L.cJ("Impressum",t,t)
 return M.PL(new O.kk(a,q,s,new P.V(1/0,56),t),Q.AK(!0,new T.eM(C.V,t,t,this.e?M.cp(t,U.Yq(),t,t,t,50,t,t,50):M.cp(t,M.a1a(this.d,new F.TZ(),!1),t,t,t,t,t,t,r.a/1.5),t),C.aa,!0),new O.iM(s,t))}}
 F.TY.prototype={
@@ -44951,7 +44952,7 @@ return P.a3(null,s)}})
 return P.a4($async$fb,s)},
 aT:function(){this.bd()
 this.fb()
-R.vA("noell.li - Datenschutz")},
+R.vA("/datenschutz","Datenschutz")},
 L:function(a){var t=null,s="/datenschutz",r=F.c9(a,!1).a,q=L.cJ("Datenschutz",t,t)
 return M.PL(new O.kk(a,q,s,new P.V(1/0,56),t),Q.AK(!0,new T.eM(C.V,t,t,this.e?M.cp(t,U.Yq(),t,t,t,50,t,t,50):M.cp(t,M.a1a(this.d,new F.T6(),!1),t,t,t,t,t,t,r.a/1.5),t),C.aa,!0),new O.iM(s,t))}}
 F.T5.prototype={
