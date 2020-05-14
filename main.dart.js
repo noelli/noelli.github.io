@@ -9196,7 +9196,7 @@ vA:function(a,b){var t=0,s=P.a5(u.H),r
 var $async$vA=P.a_(function(c,d){if(c===1)return P.a2(d,s)
 while(true)switch(t){case 0:r=u.s
 self._paq.push(H.a(["setDocumentTitle","noell.li - "+b],r))
-self._paq.push(H.a(["setCustomUrl","noell.li/#"+a],r))
+self._paq.push(H.a(["setCustomUrl","https://www.noell.li/#"+a],r))
 self._paq.push(H.a(["trackPageView"],r))
 return P.a3(null,s)}})
 return P.a4($async$vA,s)},
