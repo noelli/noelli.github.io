@@ -17,4 +17,14 @@ layout: home
         <a class="icon-large" target="_blank" href="mailto:{{ site.email }}"><i class="fa fa-envelope green-text" style=""></i></a>
     </p>
 </div>
+<div class="separator">
+    <h5>Programmiersprachen:</h5>
+</div>
+<div class="row center">
+     <a class="btn btn-flat waves-effect waves-light waves-green icon-large tooltipped" data-position="top" data-tooltip="python.org" href="https://python.org"><i class="fab fa-python"></i></a>
+</div>
+<div class="separator">
+    <h5>Letzte Projekte:</h5>
+</div>
+
 <br>

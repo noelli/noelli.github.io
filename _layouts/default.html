@@ -20,6 +20,25 @@
     <link rel="stylesheet" type="text/css" media="screen,projection" href="/assets/css/materialize.css" />
     <link rel="stylesheet" type="text/css" media="screen,projection" href="/assets/css/style.css" />
   </noscript>
+  <style>
+    .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    .separator::before, .separator::after {
+        content: '';
+        flex: 1;
+        margin-top: .5em;
+        border-bottom: 1px solid #000;
+    }
+    .separator::before {
+        margin-right: 1em;
+    }
+    .separator::after {
+        margin-left: 1em;
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
