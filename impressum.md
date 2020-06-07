@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 ---
 
 # Verantwortlich für diese Seite ist:
