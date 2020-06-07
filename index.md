@@ -18,10 +18,24 @@ layout: home
     </p>
 </div>
 <div class="separator">
-    <h5>Programmiersprachen:</h5>
+    <h5>Sprachen / Frameworks:</h5>
 </div>
 <div class="row center">
-     <a class="btn btn-flat waves-effect waves-light waves-green icon-large tooltipped" data-position="top" data-tooltip="python.org" href="https://python.org"><i class="fab fa-python"></i></a>
+    <a class="btn btn-flat waves-effect waves-light waves-green icon-large tooltipped" data-position="top" data-tooltip="python.org" href="https://python.org">
+        <i class="fab fa-python"></i>
+    </a>
+    <a class="btn btn-flat waves-effect waves-light waves-green icon-large tooltipped" data-position="top" data-tooltip="flask.palletsprojects.com" href="https://flask.palletsprojects.com/">
+        <img height="30px" width="30px" src="/assets/images/flask.png">
+    </a>
+    <a class="btn btn-flat waves-effect waves-light waves-green icon-large tooltipped" data-position="top" data-tooltip="dart.dev" href="https://dart.dev/">
+        <img height="30px" width="30px" src="/assets/images/logo_dart.png">
+    </a>
+    <a class="btn btn-flat waves-effect waves-light waves-green icon-large tooltipped" data-position="top" data-tooltip="flutter.dev" href="https://flutter.dev">
+        <img height="30px" width="30px" src="/assets/images/logo_flutter.png">
+    </a>
+    <a class="btn btn-flat waves-effect waves-light waves-green icon-large tooltipped" data-position="top" data-tooltip="nginx.org" href="https://nginx.org">
+        NGINX
+    </a>
 </div>
 <div class="separator">
     <h5>Letzte Projekte:</h5>
