@@ -18,23 +18,33 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: noelli - Programm-Entwicklung, IT-Support, 
+title: noelli - Kind Gottes, Programmierer und IT-Spezialist 
 email: tobiah@noell.li
 description: >- # this means to ignore newlines until "baseurl:"
-  Tobiah Nöll AKA noelli Programmiert deine Apps für iOS, Android, Desktop und spezielle Server-Szenarios.
-  Stöber gerne auf der Website, vielleicht sind wir ja genau der richtige Partner für dein nächstes Projekt.
+  Ich bin wiedergeborener Christ und Programmiere gerne.<BR>
+  Auf dieser Seite findest du einige meiner Projekte und siehst in welchen Feldern ich mich auskenne.
+kontakt: >-
+  Vielleicht hast du eine Idee die noch niemand umgesetzt hat oder suchst Lösungen zu einem speziellen Problem?<BR>
+  Schreib mich gerne an!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.noell.li" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  noelli
 
 # Build settings
-theme: jekyll-theme-cayman
+theme: null
 plugins:
   - jekyll-feed
+  - jekyll-multiple-languages-plugin
 
 
 show_downloads: false # ["true" or "false" to indicate whether to provide a download URL]
+playstore: https://play.google.com/store/apps/dev?id=7802855840687304638
+
+
+collections:
+  projects:
+    output: true
 # google_analytics: # [Your Google Analytics tracking ID]
 # Exclude from processing.
 # The following items will not be processed, by default.
