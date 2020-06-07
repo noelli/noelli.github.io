@@ -35,12 +35,15 @@ github_username:  noelli
 theme: null
 plugins:
   - jekyll-feed
-  - jekyll-multiple-languages-plugin
-
+#  - jekyll-multiple-languages-plugin
+  - jekyll-sitemap
 
 show_downloads: false # ["true" or "false" to indicate whether to provide a download URL]
 playstore: https://play.google.com/store/apps/dev?id=7802855840687304638
 
+# languages: ["de"]
+
+# exclude_from_localizations: ["assets", "404.html"]
 
 collections:
   projects:
