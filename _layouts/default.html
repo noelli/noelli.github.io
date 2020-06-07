@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+
+  {% if site.matomo_analytics %}
+    <!-- Matomo Code here -->
+  {% endif %}
+  <meta charset="UTF-8">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>{{ project.title | default: site.title | default: site.github.repository_name }}</title>
+
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="/assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar-fixed">
+    <nav class="green darken-3" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="/" class="brand-logo"><img style="height: 64px; width: 64px;" src="/assets/images/noelli.png"></a>
+            <ul class="right hide-on-med-and-down">
+              {% if site.github_username%}
+              <li><a class="icon-large" target="_blank" href="https://github.com/{{ site.github_username }}"><i class="fab fa-github"></i></a></li>
+              {% endif %}
+              {% if site.playsore %}
+              <li><a class="icon-large" target="_blank" href="{{ site.playstore}}"><i class="fab fa-google-play"></i></a></li>
+              {% endif %}
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+  </div>
+  <ul id="nav-mobile" class="sidenav">
+      <li><a class="disabled">Links:</a></li>
+    {% if site.github_username%}
+      <li><a class="icon-large" target="_blank" href="https://github.com/{{ site.github_username }}"><i class="fab fa-github"></i> GitHub</a></li>
+    {% endif %}
+    {% if site.playsore %}
+      <li><a class="icon-large" target="_blank" href="{{ site.playstore}}"><i class="fab fa-google-play"></i></a></li>
+    {% endif %}
+  </ul>
+  <!-- MAIN Content -->
+  <div class="section no-pad-bot" id="index-banner">
+    {{ content }}
+  </div>
+  <!-- Footer -->
+  <footer class="page-footer green darken-3">
+    <div class="container">
+      <div class="row center">
+        <a class="white-text btn btn-flat" href="/datenschutz.html">Datenschutz</a>
+        <a class="white-text btn btn-flat" href="/impressum.html">Impressum</a>
+        {% if site.github.is_project_page %}
+        <a class="white-text btn btn-flat" target="_blank" href="{{ site.github.repository_url }}">View on GitHub</a>
+        {% endif %}
+        {% if site.show_downloads %}
+        <a class="icon-large" target="_blank" href="{{ site.github.zip_url }}">Download .zip</a>
+        <a class="icon-large" target="_blank" href="{{ site.github.tar_url }}">Download .tar.gz</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made with love, <a class="white-text" href="http://materializecss.com">Materialize</a> and GitHub Pages
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/assets/js/materialize.js"></script>
+  <script src="/assets/js/init.js"></script>
+</body>
+</html>
+
