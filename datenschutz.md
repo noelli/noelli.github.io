@@ -149,7 +149,12 @@ Die Speicherung von Matomo-Cookies und die Nutzung dieses Analyse-Tools erfolgen
 
 Die durch den Cookie erzeugten Informationen über die Benutzung dieser Website werden nicht an Dritte weitergegeben. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.
 
-Wenn Sie mit der Speicherung und Nutzung Ihrer Daten nicht einverstanden sind, können Sie dieser über den Button am Fuße der Seite widersprechen. In diesem Fall wird in Ihrem Browser ein Opt-Out-Cookie hinterlegt, der verhindert, dass Matomo Nutzungsdaten speichert. Wenn Sie Ihre Cookies löschen, hat dies zur Folge, dass auch das Matomo Opt-Out-Cookie gelöscht wird. Das Opt-Out muss bei einem erneuten Besuch dieser Website wieder aktiviert werden.
+Wenn Sie mit der Speicherung und Nutzung Ihrer Daten nicht einverstanden sind, können Sie über das folgende Feld widersprechen. In diesem Fall wird in Ihrem Browser ein Opt-Out-Cookie hinterlegt, der verhindert, dass Matomo Nutzungsdaten speichert. Wenn Sie Ihre Cookies löschen, hat dies zur Folge, dass auch das Matomo Opt-Out-Cookie gelöscht wird. Das Opt-Out muss bei einem erneuten Besuch dieser Website wieder aktiviert werden.
+
+<iframe
+    style="border: 0; height: 200px; width: 600px;"
+    src="https://stat.noell.li/index.php?module=CoreAdminHome&action=optOut&language=en&backgroundColor=&fontColor=&fontSize=&fontFamily="
+></iframe>
 
 
 

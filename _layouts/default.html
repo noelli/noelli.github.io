@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-
-  {% if site.matomo_analytics %}
-    <!-- Matomo Code here -->
-  {% endif %}
   <meta charset="UTF-8">
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -39,6 +35,28 @@
         margin-left: 1em;
     }
   </style>
+
+  {% if site.matomo_analytics %}
+  <!-- Matomo -->
+  <script type="text/javascript">
+    var _paq = window._paq || [];
+    _paq.push(['requireConsent']);
+    _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+    _paq.push(["setCookieDomain", "*.noell.li"]);
+    _paq.push(["setDomains", ["*.noell.li","*.noell.li"]]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://stat.noell.li/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <noscript><p><img src="https://stat.noell.li/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Matomo Code -->
+  {% endif %}
 </head>
 <body>
   <!-- Navbar -->
@@ -93,11 +111,26 @@
     </div>
   </footer>
 
+  <!-- Cookie Warning -->
+  <!-- Modal Structure -->
+  <div id="cookie" class="modal">
+    <div class="modal-content">
+      <h4>Dürfen wir Cookies nutzen?</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="_paq.push(['rememberConsentGiven']);">Ja</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Nein</a>
+    </div>
+  </div>
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="/assets/js/materialize.js"></script>
   <script src="/assets/js/init.js"></script>
+  <script>
+    
+  </script>
 </body>
 </html>
 
