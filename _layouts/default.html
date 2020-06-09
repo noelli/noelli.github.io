@@ -36,9 +36,16 @@
     }
   </style>
 
+  
+
   {% if site.matomo_analytics %}
   <!-- Matomo -->
   <script type="text/javascript">
+
+    function setCookie(c_name,value,exdays){var exdate=new Date();exdate.setDate(exdate.getDate() + exdays);var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());document.cookie=c_name + "=" + c_value;}
+    function getCookie(c_name){var c_value = document.cookie;var c_start = c_value.indexOf(" " + c_name + "=");if (c_start == -1){c_start = c_value.indexOf(c_name + "=");}if (c_start == -1){c_value = null;}else{c_start = c_value.indexOf("=", c_start) + 1;var c_end = c_value.indexOf(";", c_start);if (c_end == -1){c_end = c_value.length;}c_value = unescape(c_value.substring(c_start,c_end));}return c_value;}
+    function delCookie(name){document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';}
+
     var _paq = window._paq || [];
     _paq.push(['requireConsent']);
     _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
@@ -116,10 +123,12 @@
   <div id="cookie" class="modal">
     <div class="modal-content">
       <h4>Dürfen wir Cookies nutzen?</h4>
-      <p>A bunch of text</p>
+      <p>
+        Wenn wir keine Cookies setzen dürfen, wird diese Warnung bei jedem Besuch angezeigt.
+      </p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="_paq.push(['rememberConsentGiven']);">Ja</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="_paq.push(['rememberConsentGiven']); setCookie('firsttime', true);">Ja</a>
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Nein</a>
     </div>
   </div>
@@ -129,13 +138,11 @@
   <script src="/assets/js/materialize.js"></script>
   <script src="/assets/js/init.js"></script>
   <script>
-    _paq.push([function () {
-      if (this.isUserOptedOut()) {
-        M.Modal.getInstance($("#cookie")).open();
-      } else {
-        // nothing
-      }
-    }])
+    //Checks if the cookie already exists
+    if (!getCookie('firsttime')){
+      //Runs the code because the cookie doesn't exist and it's the user's first time
+      M.Modal.getInstance($("#cookie")).open();
+    }
   </script>
 </body>
 </html>
