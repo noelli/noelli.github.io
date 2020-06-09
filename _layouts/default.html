@@ -129,7 +129,13 @@
   <script src="/assets/js/materialize.js"></script>
   <script src="/assets/js/init.js"></script>
   <script>
-    
+    _paq.push([function () {
+      if (this.isUserOptedOut()) {
+        M.Modal.getInstance("#cookie").open();
+      } else {
+        // nothing
+      }
+    }])
   </script>
 </body>
 </html>
