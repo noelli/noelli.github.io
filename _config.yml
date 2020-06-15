@@ -22,13 +22,12 @@ title: noelli - Kind Gottes, Programmierer und IT-Spezialist
 email: tobiah@noell.li
 description: >- # this means to ignore newlines until "baseurl:"
   Ich bin wiedergeborener Christ und Programmiere gerne.<BR>
-  Auf dieser Seite findest du einige meiner Projekte und siehst in welchen Feldern ich mich auskenne.
+  Auf dieser Seite findest Du einige meiner Projekte und siehst in welchen Feldern ich mich auskenne.
 kontakt: >-
-  Vielleicht hast du eine Idee die noch niemand umgesetzt hat oder suchst Lösungen zu einem speziellen Problem?<BR>
+  Vielleicht hast Du eine Idee die noch niemand umgesetzt hat oder suchst Lösungen zu einem speziellen Problem?<BR>
   Schreib mich gerne an!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.noell.li" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
 github_username:  noelli
 
 # Build settings
