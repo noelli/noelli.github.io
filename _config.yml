@@ -34,15 +34,17 @@ github_username:  noelli
 theme: null
 plugins:
   - jekyll-feed
-#  - jekyll-multiple-languages-plugin
+  - jekyll-multiple-languages-plugin
   - jekyll-sitemap
 
 show_downloads: false # ["true" or "false" to indicate whether to provide a download URL]
 playstore: https://play.google.com/store/apps/dev?id=7802855840687304638
 
-# languages: ["de"]
+languages: ["de", "en"]
 
 # exclude_from_localizations: ["assets", "404.html"]
+# If you wish to avoid having the default_lang built into the root of your website, use:
+# default_locale_in_subfolder: true
 
 collections:
   projects:
