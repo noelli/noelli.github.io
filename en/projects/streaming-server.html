@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
   <meta charset="UTF-8">
 
@@ -94,7 +94,7 @@
               
               
                 
-                <li><a href="/en/404.html" >English</a></li>
+                <li><a href="/projects/streaming-server.html" >Deutsch</a></li>
               
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -110,20 +110,86 @@
   </ul>
   <!-- MAIN Content -->
   <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+    <!-- MAIN Content -->
+<div class="container">
+    <h1></h1>
 </div>
+<div class="container">
+    <h1 id="compile-nginx-with-rtmp-and-setup-multi-streaming">Compile NGINX with RTMP and setup Multi-Streaming</h1>
+<p>These Scripts will install NGINX with the RTMP Module in the usual directories similar to installation with apt-get.</p>
 
+<p>The RTMP-Server you get with this can then be used to do one ore more of the following:</p>
+<ul>
+  <li>deliver streams in a local network</li>
+  <li>deliver streams to websites similar to youtube</li>
+  <li>transcode rtmp streams to hls video</li>
+  <li>publish to multiple streaming providers</li>
+  <li>record livestreams to a harddrive</li>
+  <li>many, many more: Check the Docs on <a href="https://github.com/arut/nginx-rtmp-module/wiki/Directives">Nginx RTMP-Module</a></li>
+</ul>
+
+<p>And it also runs flawless on the Raspberry Pi 4!</p>
+
+<h2 id="installation">Installation</h2>
+<p>If git is not present, install it: <a href="https://git-scm.com/downloads">Download Git</a></p>
+
+<p>Get the Scripts:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://gist.github.com/489c5c0cf5a561a32f757d7513465344.git install_nginx
+</code></pre></div></div>
+
+<p>Change into the directory:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>install_nginx
+</code></pre></div></div>
+
+<p>Then Run the main Script:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo install </span>install_nginx.sh
+</code></pre></div></div>
+
+<h3 id="pulish-to-your-new-rtmp-server">Pulish to your new RTMP-Server:</h3>
+<p>Publish from OBS or another Streaming-Device to the following URL (where hostname is the Name or IP of your server).</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rtmp://hostname:1935/live
+</code></pre></div></div>
+<p>If you have an api-key for example to publish to youtube, either set it in your OBS or alter the URL like so:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rtmp://hostname:1935/live/your-api-key
+</code></pre></div></div>
+
+<h2 id="explanation-and-options">Explanation and Options</h2>
+<p>This script installs a rtmp-config which accepts Livestreams and accepts client-connections to play them.</p>
+
+<p>By default the following options are disabled in the configuration file nginx.conf but you can enable and alter them according to your scenario:</p>
+
+<h3 id="publishing-to-streaming-service-ie-youtube">Publishing to Streaming-Service (i.e. Youtube):</h3>
+<p>If you enable the push option, every published stream will also be pushed to the provided server, by default youtube.</p>
+
+<h3 id="local-vlc-playback-ie-on-raspberry-pi">local VLC Playback (i.e. on Raspberry Pi):</h3>
+<p>The second option is very handy if you want to Livestream into the internet but have to also Stream into another Room/Location at your site where an audience is watching.</p>
+
+<p>The command after exec_publish will be executed when starting a livestream and will be killed on stop.</p>
+
+<h3 id="remote-vlc-playback">remote VLC Playback</h3>
+<p>The Command can be altered to start the VLC-Window on another device if you use it with ssh.</p>
+
+<p>To get this running you will have to do some things first, replace username and remote-client with the values fitting your setup:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> <span class="nt">-u</span> www-data ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-b</span> 4096
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data ssh-copy-id username@remote-client
+
+</code></pre></div></div>
+<p>After that you can enable an option similar to this:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-o</span> <span class="s2">"StrictHostKeyChecking no"</span> user@remote-client <span class="s2">"export DISPLAY=:0.0 &amp;&amp; vlc -f --video-on-top --no-video-title-show --mouse-hide-timeout 1 rtmp://localhost/live/</span><span class="nv">$name</span><span class="s2">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>To see what the Scripts do exactly or what the config means, look into the Files below.</p>
+
+
+</div>
   </div>
   <!-- Footer -->
   <footer class="page-footer green darken-3">
     <div class="container">
       <div class="row center">
-        <a class="white-text btn btn-flat" href="/datenschutz">Datenschutz</a>
-        <a class="white-text btn btn-flat" href="/impressum">Impressum</a>
+        <a class="white-text btn btn-flat" href="/datenschutz">Privacy</a>
+        <a class="white-text btn btn-flat" href="/impressum">Imprint</a>
         <!-- normal settings maybe delete -->
         
         <a class="white-text btn btn-flat" target="_blank" href="https://github.com/https:/noelli.github.io">View on GitHub</a>
@@ -142,15 +208,15 @@
   <!-- Modal Structure -->
   <div id="cookie" class="modal bottom-sheet">
     <div class="modal-content">
-      <h4>Dürfen wir Cookies nutzen?</h4>
+      <h4>Do you want us to set Cookies?</h4>
 <p>
-    Wenn wir keine Cookies setzen dürfen, wird diese Warnung bei jedem Besuch angezeigt.
+    If we are not allowed to set Cookies this warning will appear on every Visit.
 </p>
 
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="_paq.push(['rememberConsentGiven']); setCookie('firsttime', true);">Ja</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Nein</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="_paq.push(['rememberConsentGiven']); setCookie('firsttime', true);">Yes</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">No</a>
     </div>
   </div>
   <!-- Scripts -->
