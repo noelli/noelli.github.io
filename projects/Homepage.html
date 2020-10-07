@@ -17,6 +17,16 @@
     <link rel="stylesheet" type="text/css" media="screen,projection" href='/assets/css/style.css'/>
   </noscript>
   <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+  
+    main {
+      flex: 1 0 auto;
+    }
+
     .separator {
       display: flex;
       align-items: center;
@@ -82,6 +92,7 @@
   
 </head>
 <body>
+  <header>
   <!-- Navbar -->
   <div class="navbar-fixed">
     <nav class="green darken-3" role="navigation">
@@ -108,11 +119,14 @@
     
     
   </ul>
+  </header>
+  
   <!-- MAIN Content -->
-  <div class="section no-pad-bot" id="index-banner">
-    <!-- MAIN Content -->
+  <main>
+    <div class="section no-pad-bot" id="index-banner">
+      <!-- MAIN Content -->
 <div class="container">
-    <h1></h1>
+    <h1>Diese Homepage</h1>
 </div>
 <div class="container">
     <!-- ToDo: Add translated description, etc. -->
@@ -126,7 +140,9 @@
 
 
 </div>
-  </div>
+    </div>
+  </main>
+
   <!-- Footer -->
   <footer class="page-footer green darken-3">
     <div class="container">

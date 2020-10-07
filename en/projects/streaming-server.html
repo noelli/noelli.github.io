@@ -17,6 +17,16 @@
     <link rel="stylesheet" type="text/css" media="screen,projection" href='/assets/css/style.css'/>
   </noscript>
   <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+  
+    main {
+      flex: 1 0 auto;
+    }
+
     .separator {
       display: flex;
       align-items: center;
@@ -82,6 +92,7 @@
   
 </head>
 <body>
+  <header>
   <!-- Navbar -->
   <div class="navbar-fixed">
     <nav class="green darken-3" role="navigation">
@@ -108,16 +119,18 @@
     
     
   </ul>
+  </header>
+  
   <!-- MAIN Content -->
-  <div class="section no-pad-bot" id="index-banner">
-    <!-- MAIN Content -->
+  <main>
+    <div class="section no-pad-bot" id="index-banner">
+      <!-- MAIN Content -->
 <div class="container">
-    <h1></h1>
+    <h1>NGINX (Multi-) Streaming Server</h1>
 </div>
 <div class="container">
     <!-- ToDo: Add translation -->
 
-<h2 id="nginx-multi--streaming-server">NGINX (Multi-) Streaming Server</h2>
 <p>This installation Tutorial and the corresponding Scripts were initially provided within a <a href="https://gist.github.com/noelli/489c5c0cf5a561a32f757d7513465344">Gist</a> and help with the installation of a custom RTMP Server using NGINX.</p>
 
 <p>We did not only want to Stream to many different Services like Youtube, Twitch and Facebook but also wanted to playback Streams locally in different Rooms with little to zero latency. Which is not possible if you use a Streaming Service in the Cloud. So we needed a Local Multi-Streaming Provider, as shown in the Diagram below.</p>
@@ -194,7 +207,9 @@
 
 
 </div>
-  </div>
+    </div>
+  </main>
+
   <!-- Footer -->
   <footer class="page-footer green darken-3">
     <div class="container">

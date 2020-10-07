@@ -17,6 +17,16 @@
     <link rel="stylesheet" type="text/css" media="screen,projection" href='/assets/css/style.css'/>
   </noscript>
   <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+  
+    main {
+      flex: 1 0 auto;
+    }
+
     .separator {
       display: flex;
       align-items: center;
@@ -82,6 +92,7 @@
   
 </head>
 <body>
+  <header>
   <!-- Navbar -->
   <div class="navbar-fixed">
     <nav class="green darken-3" role="navigation">
@@ -108,9 +119,12 @@
     
     
   </ul>
+  </header>
+  
   <!-- MAIN Content -->
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
+  <main>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
     <p><br />
 <br /></p>
 <h1 class="header center"><img style="height: 200px; width: 200px;" src="assets/images/noelli.png" alt="" /></h1>
@@ -254,7 +268,9 @@
         <br>
     </div>
 </div>
-  </div>
+    </div>
+  </main>
+
   <!-- Footer -->
   <footer class="page-footer green darken-3">
     <div class="container">
