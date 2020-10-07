@@ -44,6 +44,10 @@
     .separator::after {
         margin-left: 1em;
     }
+
+    .indent {
+      margin-left: 10px;
+    }
   </style>
 <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href='/assets/images/favicon/apple-icon-57x57.png'>
@@ -95,6 +99,17 @@
   <header>
   <!-- Navbar -->
   <div class="navbar-fixed">
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+      
+        <li><a href="/projects/Homepage.html">Diese Homepage</a></li>
+      
+        <li><a href="/projects/QR-Translator.html">QR-Translator</a></li>
+      
+        <li><a href="/projects/streaming-server.html">NGINX (Multi-) Streaming Server</a></li>
+      
+
+    </ul>
     <nav class="green darken-3" role="navigation">
         <div class="nav-wrapper container">
             <a id="logo-container" href="/" class="brand-logo"><img class="navbar-fixed" src='/assets/images/noelli.png'></a>
@@ -107,6 +122,8 @@
                 
                 <li><a href="/404.html" >Deutsch</a></li>
               
+              <!-- Dropdown Trigger -->
+              <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Projects<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
@@ -114,10 +131,23 @@
   </div>
   <ul id="nav-mobile" class="sidenav">
       <li><a class="disabled">Links:</a></li>
-    
-      <li><a class="icon-large" target="_blank" href="https://github.com/noelli"><i class="fab fa-github"></i> GitHub</a></li>
-    
-    
+      
+      <li class="indent"><a class="icon-large" target="_blank" href="https://github.com/noelli"><i class="fab fa-github"></i> Github</a></li>
+      
+      
+      
+        
+        <li class="indent"><a href="/404.html" >Deutsch</a></li>
+      
+      <hr>
+      <li><a class="disabled">Projects:</a></li>
+      
+        <li class="indent"><a href="/projects/Homepage.html">Diese Homepage</a></li>
+      
+        <li class="indent"><a href="/projects/QR-Translator.html">QR-Translator</a></li>
+      
+        <li class="indent"><a href="/projects/streaming-server.html">NGINX (Multi-) Streaming Server</a></li>
+      
   </ul>
   </header>
   
