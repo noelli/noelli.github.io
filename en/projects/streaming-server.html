@@ -48,6 +48,13 @@
     .indent {
       margin-left: 10px;
     }
+
+    body:not(.loaded) .hide-for-load {
+      display: none;
+    }
+    body.loaded .hide-after-load {
+      display: none;
+    }
   </style>
 <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href='/assets/images/favicon/apple-icon-57x57.png'>
@@ -67,6 +74,12 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content='/assets/images/favicon/ms-icon-144x144.png'>
   <meta name="theme-color" content="#ffffff">
+
+<script>
+  function finishedLoading() {
+    document.body.classList.add("loaded");
+  }
+</script> 
 
   
   <!-- Matomo -->
@@ -95,8 +108,20 @@
   <!-- End Matomo Code -->
   
 </head>
-<body>
-  <header>
+<body onload="finishedLoading()">
+  <div class="preloader-wrapper big active hide-after-load">
+    <div class="spinner-layer spinner-blue">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <header class="hide-for-load">
   <!-- Navbar -->
   <div class="navbar-fixed">
     <!-- Dropdown Structure -->
@@ -112,7 +137,9 @@
     </ul>
     <nav class="green darken-3" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="/" class="brand-logo"><img class="navbar-fixed" src='/assets/images/noelli.png'></a>
+            <a id="logo-container" href="/" class="brand-logo">
+              <img class="navbar-fixed" src='/assets/images/noelli.png'>
+            </a>
             <ul class="right hide-on-med-and-down">
               
               <li><a class="icon-large" target="_blank" href="https://github.com/noelli"><i class="fab fa-github"></i></a></li>
@@ -152,21 +179,18 @@
   </header>
   
   <!-- MAIN Content -->
-  <main>
+  <main class="hide-for-load">
     <div class="section no-pad-bot" id="index-banner">
       <!-- MAIN Content -->
 <div class="container">
-    <h1>NGINX (Multi-) Streaming Server</h1>
+    <!-- MAIN Content -->
+<div class="row">
+    <div class="col s12 m8 l9"><h1>NGINX (Multi-) Streaming Server</h1></div>
 </div>
-<div class="container">
-    <h4>Links:</h4>
-    
-        <a class="btn btn-floating waves-effect waves-light red" href="https://gist.github.com/noelli/489c5c0cf5a561a32f757d7513465344"><i class="fab fa-github"></i></a>
-    
-</div>
-<div class="container">
-    <!-- ToDo: Add translation -->
-
+<div class="row">
+    <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+        <!-- ToDo: Add translation -->
+<h4 id="introduction">Introduction</h4>
 <p>This installation Tutorial and the corresponding Scripts were initially provided within a <a href="https://gist.github.com/noelli/489c5c0cf5a561a32f757d7513465344">Gist</a> and help with the installation of a custom RTMP Server using NGINX.</p>
 
 <p>We did not only want to Stream to many different Services like Youtube, Twitch and Facebook but also wanted to playback Streams locally in different Rooms with little to zero latency. Which is not possible if you use a Streaming Service in the Cloud. So we needed a Local Multi-Streaming Provider, as shown in the Diagram below.</p>
@@ -242,12 +266,23 @@
 <p>To see what the Scripts do exactly or what the config means, look into the Files below.</p>
 
 
+    </div>
+    <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+        <h4>Links:</h4>
+        
+        <ul>
+            <li><a class="btn waves-effect waves-light red" href="https://gist.github.com/noelli/489c5c0cf5a561a32f757d7513465344"><i class="fab fa-github"></i> github</a></li>
+        </ul>   
+        
+    </div>
+</div>
+
 </div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="page-footer green darken-3">
+  <footer class="hide-for-load page-footer green darken-3">
     <div class="container">
       <div class="row center">
         <a class="white-text btn btn-flat" href="/datenschutz">Privacy</a>
@@ -268,7 +303,7 @@
 
   <!-- Cookie Warning -->
   <!-- Modal Structure -->
-  <div id="cookie" class="modal bottom-sheet">
+  <div id="cookie" class="hide-for-load modal bottom-sheet">
     <div class="modal-content">
       <h4>Do you want us to set Cookies?</h4>
 <p>

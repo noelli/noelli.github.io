@@ -48,6 +48,13 @@
     .indent {
       margin-left: 10px;
     }
+
+    body:not(.loaded) .hide-for-load {
+      display: none;
+    }
+    body.loaded .hide-after-load {
+      display: none;
+    }
   </style>
 <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href='/assets/images/favicon/apple-icon-57x57.png'>
@@ -67,6 +74,12 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content='/assets/images/favicon/ms-icon-144x144.png'>
   <meta name="theme-color" content="#ffffff">
+
+<script>
+  function finishedLoading() {
+    document.body.classList.add("loaded");
+  }
+</script> 
 
   
   <!-- Matomo -->
@@ -95,8 +108,20 @@
   <!-- End Matomo Code -->
   
 </head>
-<body>
-  <header>
+<body onload="finishedLoading()">
+  <div class="preloader-wrapper big active hide-after-load">
+    <div class="spinner-layer spinner-blue">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <header class="hide-for-load">
   <!-- Navbar -->
   <div class="navbar-fixed">
     <!-- Dropdown Structure -->
@@ -112,7 +137,9 @@
     </ul>
     <nav class="green darken-3" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="/" class="brand-logo"><img class="navbar-fixed" src='/assets/images/noelli.png'></a>
+            <a id="logo-container" href="/" class="brand-logo">
+              <img class="navbar-fixed" src='/assets/images/noelli.png'>
+            </a>
             <ul class="right hide-on-med-and-down">
               
               <li><a class="icon-large" target="_blank" href="https://github.com/noelli"><i class="fab fa-github"></i></a></li>
@@ -152,7 +179,7 @@
   </header>
   
   <!-- MAIN Content -->
-  <main>
+  <main class="hide-for-load">
     <div class="section no-pad-bot" id="index-banner">
       <div class="container">
   <h1>404</h1>
@@ -165,7 +192,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="page-footer green darken-3">
+  <footer class="hide-for-load page-footer green darken-3">
     <div class="container">
       <div class="row center">
         <a class="white-text btn btn-flat" href="/datenschutz">Privacy</a>
@@ -186,7 +213,7 @@
 
   <!-- Cookie Warning -->
   <!-- Modal Structure -->
-  <div id="cookie" class="modal bottom-sheet">
+  <div id="cookie" class="hide-for-load modal bottom-sheet">
     <div class="modal-content">
       <h4>Do you want us to set Cookies?</h4>
 <p>
