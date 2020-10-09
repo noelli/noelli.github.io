@@ -185,81 +185,78 @@
 <div class="row">
     <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
         <!-- ToDo: Add translation -->
-<h4 id="introduction">Introduction</h4>
-<p>This installation Tutorial and the corresponding Scripts were initially provided within a <a href="https://gist.github.com/noelli/489c5c0cf5a561a32f757d7513465344">Gist</a> and help with the installation of a custom RTMP Server using NGINX.</p>
+<h4 id="einführung">Einführung</h4>
+<p>Dieses Tutorial und die dazugehörigen Skripte wurden urspünglich in einem <a href="https://gist.github.com/noelli/489c5c0cf5a561a32f757d7513465344">Gist</a> Veröffentlicht und vereinfachen die Installation eines eigenen RTMP-Servers mithilfe von NGINX.</p>
 
-<p>We did not only want to Stream to many different Services like Youtube, Twitch and Facebook but also wanted to playback Streams locally in different Rooms with little to zero latency. Which is not possible if you use a Streaming Service in the Cloud. So we needed a Local Multi-Streaming Provider, as shown in the Diagram below.</p>
+<p>Wir hatten nicht nur die Anforderung an verschiedene Dienste wie Youtube, Twitch oder Facebook gleichzeitig zu streamen, sondern benötigten auch “Lokale Wiedergabemöglichkeiten” also Empfänger in anderen Räumlichkeiten in der gleichen Liegenschaft.
+Dies bedingt möglichst niedrige Latenzen, welche mit den üblichen Multi-Streaming Anbietern in der Cloud nicht erreicht werden können, sodass wir uns für eine Topologie wie unten angezeigt entschieden haben.</p>
 
-<p>We managed to get there with the provided Instructions and Scripts, running on a low-cost Raspberry Pi 4, with the only Bottleneck being the Internet Connection!</p>
+<p>Die mit diesen Skripten und Anleitungen hergestellte Lösung ist auf einem kostengünstigen Raspberry Pi 4 vollfunktionsfähig, der einzige Flaschenhals ist die Netzwerkanbindung!</p>
 
 <p><img src="/assets/images/NGINXStreamingServer.svg" alt="Network Diagram of a local NGINX Streaming Server by noell.li" style="     margin-top: 50px;     margin-bottom: 50px;     width: 100%; " /></p>
 
-<h2 id="compile-nginx-with-rtmp-and-setup-multi-streaming">Compile NGINX with RTMP and setup Multi-Streaming</h2>
-<p>These Scripts will install NGINX with the RTMP Module in the usual directories similar to installation with apt-get.</p>
+<h2 id="nginx-mit-rtmp-modul-kompilieren-und-multi-streaming-einstellen">NGINX mit RTMP-Modul kompilieren und Multi-Streaming einstellen</h2>
+<p>Diese Skripte werden NGINX mit dem RTMP Modul installieren, dabei werden die “normalen” Ordner genutzt, wie auch bspw. von apt-get.</p>
 
-<p>The RTMP-Server you get with this can then be used to do one ore more of the following:</p>
+<p>Der RTMP-Server den Sie damit erhalten kann für eins oder mehr der folgenden Dinge genutzt werden:</p>
 <ul>
-  <li>deliver streams in a local network</li>
-  <li>deliver streams to websites similar to youtube</li>
-  <li>transcode rtmp streams to hls video</li>
-  <li>publish to multiple streaming providers</li>
-  <li>record livestreams to a harddrive</li>
-  <li>many, many more: Check the Docs on <a href="https://github.com/arut/nginx-rtmp-module/wiki/Directives">Nginx RTMP-Module</a></li>
+  <li>Streams im localen Netzerk bereitstellen</li>
+  <li>RTMP Streams in HLS-Video umwandeln</li>
+  <li>Streams an ein oder mehrere Webseiten wie z.B. Youtube senden</li>
+  <li>Streams auf Festplatte speichern</li>
+  <li>vieles, vieles mehr: Schau mal in die Offizielle Doku: <a href="https://github.com/arut/nginx-rtmp-module/wiki/Directives">Nginx RTMP-Module</a></li>
 </ul>
 
-<p>And it also runs flawless on the Raspberry Pi 4!</p>
+<p>Und es läuft problemlos auf einem Raspberry Pi 4!</p>
 
 <h2 id="installation">Installation</h2>
-<p>If git is not present, install it: <a href="https://git-scm.com/downloads">Download Git</a></p>
+<p>Wenn noch kein Git vorhanden ist, installiere es: <a href="https://git-scm.com/downloads">Download Git</a></p>
 
-<p>Get the Scripts:</p>
+<p>Hole die Skripte:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://gist.github.com/489c5c0cf5a561a32f757d7513465344.git install_nginx
 </code></pre></div></div>
 
-<p>Change into the directory:</p>
+<p>Wechsel in das Ziel-Verzeichis:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>install_nginx
 </code></pre></div></div>
-
-<p>Then Run the main Script:</p>
+<p>Führe das Haupt Installationsskript aus:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo install </span>install_nginx.sh
 </code></pre></div></div>
 
-<h3 id="pulish-to-your-new-rtmp-server">Pulish to your new RTMP-Server:</h3>
-<p>Publish from OBS or another Streaming-Device to the following URL (where hostname is the Name or IP of your server).</p>
+<h3 id="streame-auf-deinen-neuen-rtmp-server">Streame auf deinen neuen RTMP-Server:</h3>
+<p>Starte einen Stream von OBS oder eines anderen Streaming-Gerätes auf folgende URL (Hostname ist hier die IP oder der Name deines Servers):</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rtmp://hostname:1935/live
 </code></pre></div></div>
-<p>If you have an api-key for example to publish to youtube, either set it in your OBS or alter the URL like so:</p>
+<p>Wenn du einen API-Key z.B. von Youtube hast, stelle ihn in OBS ein oder verändere die URL wie folgt:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rtmp://hostname:1935/live/your-api-key
 </code></pre></div></div>
 
-<h2 id="explanation-and-options">Explanation and Options</h2>
-<p>This script installs a rtmp-config which accepts Livestreams and accepts client-connections to play them.</p>
+<h2 id="erklärung-und-optionen">Erklärung und Optionen:</h2>
+<p>Dieses Skript installiert eine RTMP-Configuration welche Livestreams annimt und an CLient-Verbindungen verteilt.</p>
 
-<p>By default the following options are disabled in the configuration file nginx.conf but you can enable and alter them according to your scenario:</p>
+<p>Standardmäßig sind folgende Optionen deaktiviert aber können, bei Bedarf, in der Konfigurations-Datei  <code class="language-plaintext highlighter-rouge">/etc/nginx/nginx.conf</code> aktiviert werden:</p>
 
-<h3 id="publishing-to-streaming-service-ie-youtube">Publishing to Streaming-Service (i.e. Youtube):</h3>
-<p>If you enable the push option, every published stream will also be pushed to the provided server, by default youtube.</p>
+<h3 id="veröffentlichen-zu-einem-streaming-service-zb-youtube">Veröffentlichen zu einem Streaming-Service (z.B. Youtube):</h3>
+<p>Wenn du die Push Option aktivierst, wird jeder ankommende Stream auf die genannte URL weitergeleitet, standardmäßig Youtube.</p>
 
-<h3 id="local-vlc-playback-ie-on-raspberry-pi">local VLC Playback (i.e. on Raspberry Pi):</h3>
-<p>The second option is very handy if you want to Livestream into the internet but have to also Stream into another Room/Location at your site where an audience is watching.</p>
+<h3 id="lokale-vlc-wiedergabe-zb-auf-einem-raspberry-pi">Lokale VLC Wiedergabe (z.B. auf einem Raspberry Pi):</h3>
+<p>Diese Option ist sehr Hilfreich wenn du in das Internet Livestreamen möchtest aber auch in einen Lokalen Raum Streamen möchtest.</p>
 
-<p>The command after exec_publish will be executed when starting a livestream and will be killed on stop.</p>
+<p>Der Befehl nach exec_publish wird zu beginn eines neuen Livestreams ausgeführt und nach beendigung desselben beendet.</p>
 
-<h3 id="remote-vlc-playback">remote VLC Playback</h3>
-<p>The Command can be altered to start the VLC-Window on another device if you use it with ssh.</p>
+<h4 id="vlc-wiedergabe-auf-anderem-linux-gerät">VLC Wiedergabe auf anderem Linux-Gerät</h4>
+<p>Der VLC-Befehl kann abgewandelt werden um VLC-Fenster auf einem anderen Gerät zu starten, via SSH.</p>
 
-<p>To get this running you will have to do some things first, replace username and remote-client with the values fitting your setup:</p>
+<p>Um das ans laufen zu bekommen müssen wir ein paar Vorbereitungen treffen. Ersetze <code class="language-plaintext highlighter-rouge">username</code> und <code class="language-plaintext highlighter-rouge">remote-client</code> durch die richtigen Werte.</p>
 
+<p>Hier wird ein neuer SSH-Key generiert:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> <span class="nt">-u</span> www-data ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-b</span> 4096
 <span class="nb">sudo</span> <span class="nt">-u</span> www-data ssh-copy-id username@remote-client
 
 </code></pre></div></div>
-<p>After that you can enable an option similar to this:</p>
+<p>Danach kann eine Option ähnlich wie die Folgende eingestellt werden:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-o</span> <span class="s2">"StrictHostKeyChecking no"</span> user@remote-client <span class="s2">"export DISPLAY=:0.0 &amp;&amp; vlc -f --video-on-top --no-video-title-show --mouse-hide-timeout 1 rtmp://localhost/live/</span><span class="nv">$name</span><span class="s2">"</span><span class="p">;</span>
 </code></pre></div></div>
-
-<p>To see what the Scripts do exactly or what the config means, look into the Files below.</p>
-
 
     </div>
     <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
