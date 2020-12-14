@@ -8,10 +8,16 @@
   <title>noelli - Kind Gottes, Programmierer und IT-Spezialist</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="stylesheet" href='assets/css/min/index.min.css' />
-  <link rel="stylesheet" type="text/css" media="screen,projection" rel="preload" href='/assets/css/materialize.css'/>
-  <link rel="stylesheet" type="text/css" media="screen,projection" rel="preload" href='/assets/css/style.css'/>
+  <link rel="stylesheet" type="text/css" media="all" href='assets/css/min/index.min.css' />
+
+  <link rel="preload" media="all" href='/assets/css/materialize.css' as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" media="all" href='/assets/css/materialize.css'></noscript>
+
+  <link rel="preload" media="all" href='/assets/css/style.css' as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" media="all" href='/assets/css/style.css'></noscript>
+
+  <link rel="preload" media="all" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" media="all" href="https://fonts.googleapis.com/icon?family=Material+Icons"></noscript>
   <style>
     body {
       display: flex;
